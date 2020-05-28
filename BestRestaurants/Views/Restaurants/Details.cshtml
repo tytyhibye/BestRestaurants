@@ -1,7 +1,7 @@
 @{
   Layout = "_Layout";
 }
-
+@using BestRestaurants.Models;
 @model BestRestaurants.Models.Restaurant
 
 <h2>Restaurant Details</h2>
@@ -9,7 +9,14 @@
 <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
 <h3>@Html.DisplayNameFor(model => model.Cuisine): @Html.DisplayFor(model => model.Cuisine)
 <h3>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)<h3>
-<br>>
+<br>
+@foreach (Review review in Model.Reviews)
+{
+  <div id="card">
+  <p>@review.Description</p>
+  <h3>@review.Rating</h3>
+  </div>
+}
 <p>@Html.ActionLink("Edit listing", "Edit", new { id = Model.RestaurantId })</p>
 <p>@Html.ActionLink("Delete restaurant", "Delete", new { id = Model.RestaurantId })</p>
 <p>@Html.ActionLink("Add new restaurant", "Create")</p>
