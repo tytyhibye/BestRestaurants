@@ -1,11 +1,15 @@
+@using BestRestaurants.Models;
 <img src='~/img/BR-Header.JPG' alt="Best Resstaurants Header" margin="0 auto" height="auto" width="100%" style="border: 5px double black">
   <br>
   <br>
   <div id="navBar">
   <form action="/search" method="get">
-  <@Html.DropDownList("search")
+  @Html.DropDownList("search",
+  new SelectList(Enum.GetNames(typeof(CuisineName))),
+  "Cuisine Type", new { @class = "form-control"})
+  <input type="submit" value="Search for Restaurants">
   </form>
-  
+
     <ul class="nav nav-tabs animated bounceInDown">
       <li role="presentation"><a href="/">Home</a></li>
       <li role="presentation"><a href="/restaurants">Restaurants</a></li>
