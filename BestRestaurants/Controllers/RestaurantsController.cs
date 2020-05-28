@@ -7,11 +7,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BestRestaurants.Controllers
 {
-  public class RestaurantsController : Controllers
+  public class RestaurantsController : Controller
   {
     private readonly BestRestaurantsContext _db;
 
-    public RestaurantsController(BestRestaurantContext db)
+    public RestaurantsController(BestRestaurantsContext db)
     {
       _db = db;
     }
@@ -22,7 +22,7 @@ namespace BestRestaurants.Controllers
       return View(model);
     }
 
-     public ActionResult Create()
+    public ActionResult Create()
     {
       ViewBag.CategoryId = new SelectList(_db.Categories, "CategoryId", "Name");
       return View();
@@ -38,7 +38,7 @@ namespace BestRestaurants.Controllers
 
     public ActionResult Details(int id)
     {
-      Restaurant thisRestaurant = _db.Restaurants.FirstOrderDefault(restaurants => restaurants.RestaurantID == id);
+      Restaurant thisRestaurant = _db.Restaurants.FirstOrDefault(restaurants => restaurants.RestaurantId == id);
       return View(thisRestaurant);
     }
 
