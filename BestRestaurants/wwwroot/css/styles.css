@@ -102,6 +102,11 @@ input[type=text] {
 background-color: rgb(15, 15, 15);
 }
 
+form-control
+{
+  color: black;
+}
+
 .jumbotron {
   background-color: rgba(0, 0, 0, 0.349);
   text-align: center;
