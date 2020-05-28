@@ -9,5 +9,5 @@
 
 @foreach(Restaurant rest in Model)
 {
-   <li><h3>@Html.ActionLink($"{rest.Name}", "Details", new {id = rest.RestaurantId})</h3></li>
+   <li><h3>@Html.ActionLink($"{rest.Name}", "Details", "Restaurants", new {id = rest.RestaurantId})</h3></li>
 }

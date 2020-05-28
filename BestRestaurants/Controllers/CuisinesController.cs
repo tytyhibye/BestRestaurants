@@ -70,17 +70,17 @@ namespace BestRestaurants.Controllers
     }
 
     [HttpGet("/search")]
-    public ActionResult Search(string cuisineType)
+    public ActionResult Search(string search)
     {
       List<Cuisine> model = _db.Cuisines.Include(cuisines => cuisines.Restaurants).ToList();
 
       Cuisine match = new Cuisine();
 
-      if (!string.IsNullOrEmpty(cuisineType))
+      if (!string.IsNullOrEmpty(search))
       {
        foreach(Cuisine cuisine in model)
        {
-         if (cuisine.Name == cuisineType)
+         if (cuisine.Name == search)
          {
            match = cuisine;
          }
