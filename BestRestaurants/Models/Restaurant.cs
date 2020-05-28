@@ -11,4 +11,5 @@ namespace BestRestaurants.Models
     public int CuisineId { get; set; }
     public virtual Cuisine Cuisine { get; set; }
   }
+
 }

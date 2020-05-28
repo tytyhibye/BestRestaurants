@@ -2,6 +2,10 @@
   <br>
   <br>
   <div id="navBar">
+  <form action="/search" method="get">
+  <@Html.DropDownList("search")
+  </form>
+  
     <ul class="nav nav-tabs animated bounceInDown">
       <li role="presentation"><a href="/">Home</a></li>
       <li role="presentation"><a href="/restaurants">Restaurants</a></li>

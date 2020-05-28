@@ -68,5 +68,26 @@ namespace BestRestaurants.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
+
+    [HttpGet("/search")]
+    public ActionResult Search(string cuisineType)
+    {
+      List<Cuisine> model = _db.Cuisines.Include(cuisines => cuisines.Restaurants).ToList();
+
+      Cuisine match = new Cuisine();
+
+      if (!string.IsNullOrEmpty(cuisineType))
+      {
+       foreach(Cuisine cuisine in model)
+       {
+         if (cuisine.Name == cuisineType)
+         {
+           match = cuisine;
+         }
+       } 
+      }
+      List<Restaurant> matches = match.Restaurants.ToList();
+      return View(matches);
+    }
   }
 }

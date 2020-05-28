@@ -1,0 +1,13 @@
+
+@{
+  Layout = "_Layout";
+}
+
+@using BestRestaurants.Models;
+
+<h2>Search Results:</h2>
+
+@foreach(Restaurant rest in Model)
+{
+   <li><h3>@Html.ActionLink($"{rest.Name}", "Details", new {id = rest.RestaurantId})</h3></li>
+}

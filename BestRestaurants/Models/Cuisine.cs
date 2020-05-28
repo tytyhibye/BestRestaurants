@@ -14,4 +14,19 @@ namespace BestRestaurants.Models
     public virtual ICollection<Restaurant> Restaurants { get; set; } // generic interface - collection of method signatures bundled together.
                                                                      // ICollection required by Entity to outline methods for querying and changing data.
   }
+  public enum CuisineName
+  {
+    Mexican,
+    Italian,
+    Szechuan,
+    Cantonese,
+    Thai,
+    Indian,
+    French,
+    American,
+    Mediterranean,
+    Japanese,
+    Ethiopian
+
+  }
 }

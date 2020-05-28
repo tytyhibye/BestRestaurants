@@ -15,9 +15,9 @@
     <p>no restaurants found</p>
   }
 
-  @foreach (Restaurant restaurant in @Model.Restaurants)
+  @* @foreach (Restaurant restaurant in @Model.Restaurants)
   {
     <li>Name: @restaurant.Name | @Html.ActionLink("Edit Entry", "Edit", new { id = Model.CuisineId })</li>
     <li>Description: @restaurant.Description | @Html.ActionLink("Delete Entry", "Delete", new { id = Model.CuisineId })</li>
-  }
+  } *@
 </ul>
