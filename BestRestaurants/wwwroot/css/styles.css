@@ -66,7 +66,7 @@ body {
   font-size: large;
   text-shadow: 0px 0px 20px rgb(255, 255, 255), 0px 0px 3px rgb(253, 255, 131); */
   background-color: rgb(255, 255, 255);
-  background: linear-gradient(rgb(190, 190, 190), rgb(92, 92, 92), rgba(0, 0, 0, 0.986));
+  background: linear-gradient(rgb(12, 12, 12), rgb(92, 92, 92), rgba(223, 223, 223, 0.986));
   background-position: center; 
   background-repeat: no-repeat; 
   background-size: cover;
@@ -91,9 +91,7 @@ h2 {
 
 h3 {
   color: rgb(0, 0, 0);
-  letter-spacing: -2px;
   font-weight: 700;
-  text-shadow: 0px 0px 12px rgb(255, 255, 255), 0px 0px 12px rgb(253, 255, 131);
   font-family: "Open Sans",  Impact;
   font-size: auto;
 }
